@@ -6,7 +6,7 @@ require("phpsqlajax_dbinfo.php");
 // Start XML file, create parent node
 
 $dom = new DOMDocument("1.0");
-$node = $dom->createElement("clients");
+$node = $dom->createElement("jozi2");
 $parnode = $dom->appendChild($node);
 
 // Opens a connection to a MySQL server
@@ -23,7 +23,7 @@ if (!$db_selected) {
 
 // Select all the rows in the markers table
 
-$query = "SELECT * FROM clients WHERE 1";
+$query = "SELECT * FROM jozi2 WHERE 1";
 $result = mysql_query($query);
 if (!$result) {
   die('Invalid query: ' . mysql_error());
@@ -36,7 +36,7 @@ if (!$result) {
 while ($row = @mysql_fetch_assoc($result)){
   // Add to XML document node
   header("Content-type: text/xml");  
-  $node = $dom->createElement("client");
+  $node = $dom->createElement("jozi2");
   $newnode = $parnode->appendChild($node);
   $newnode->setAttribute("ID",$row['ID']);
   $newnode->setAttribute("name",$row['name']);
