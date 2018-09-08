@@ -1,8 +1,8 @@
 
 <?php
 
-$username="root";
-$password="";
+$username="Admin";
+$password="Anna1606";
 $database="Admin";
 
 ?>
